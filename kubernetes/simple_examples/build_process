@@ -2,3 +2,5 @@ kubectl create -f mysql-rc.yaml
 kubectl get rc
 kubectl create -f mysql-svc.yaml
 kubectl get svc
+kubectl create -f myweb-rc.yaml
+kubectl get rc
