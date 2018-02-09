@@ -4,3 +4,22 @@ sudo mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bk
 将本目录的同名文件拷入
 3. yum makecache
 4. yum install -y etcd kubernetes
+5. 修改 docker 配置
+修改文件 /etc/sysconfig/docker
+OPTIONS 参数中的
+--selinux-enabled=false
+--insecure-registry gcr.io
+6. 修改 apiserver 配置
+修改文件 /etc/kubernetes/apiserver
+删除 --admission_control下的
+ServiceAccount
+7. 启动kubernetes
+systemctl start etcd
+systemctl start docker
+systemctl start kube-apiserver
+systemctl start kube-controller-manager
+systemctl start kube-scheduler
+systemctl start kubelet
+systemctl start kube-proxy
+
+
