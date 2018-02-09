@@ -2,4 +2,5 @@
 2. 重设源
 sudo mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bk
 将本目录的同名文件拷入
-3.
+3. yum makecache
+4. yum install -y etcd kubernetes
