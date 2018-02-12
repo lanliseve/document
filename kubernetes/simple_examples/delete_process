@@ -1,0 +1,4 @@
+kubectl delete svc mysql
+kubectl delete rc mysql
+kubectl delete svc myweb
+kubectl delete rc myweb
